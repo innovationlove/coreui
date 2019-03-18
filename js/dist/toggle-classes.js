@@ -22,4 +22,6 @@ var toggleClasses = function toggleClasses(toggleClass, classNames) {
     document.body.classList.add(toggleClass);
   }
 };
+
+export default toggleClasses;
 //# sourceMappingURL=toggle-classes.js.map

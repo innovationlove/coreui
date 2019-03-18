@@ -17,6 +17,8 @@
 
 .nav-link.disabled {
   color: #73818f;
+  pointer-events: none;
+  cursor: default;
 }
 
 .nav-tabs {

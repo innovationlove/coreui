@@ -64,6 +64,13 @@
   background-color: #c1e7f4;
 }
 
+.table-primary th,
+.table-primary td,
+.table-primary thead th,
+.table-primary tbody + tbody {
+  border-color: #8bd2eb;
+}
+
 .table-hover .table-primary:hover {
   background-color: #abdff0;
 }
@@ -77,6 +84,13 @@
 .table-secondary > th,
 .table-secondary > td {
   background-color: #f0f1f3;
+}
+
+.table-secondary th,
+.table-secondary td,
+.table-secondary thead th,
+.table-secondary tbody + tbody {
+  border-color: #e2e6e8;
 }
 
 .table-hover .table-secondary:hover {
@@ -94,6 +108,13 @@
   background-color: #cdedd8;
 }
 
+.table-success th,
+.table-success td,
+.table-success thead th,
+.table-success tbody + tbody {
+  border-color: #a2ddb7;
+}
+
 .table-hover .table-success:hover {
   background-color: #bae6c9;
 }
@@ -107,6 +128,13 @@
 .table-info > th,
 .table-info > td {
   background-color: #d3eef6;
+}
+
+.table-info th,
+.table-info td,
+.table-info thead th,
+.table-info tbody + tbody {
+  border-color: #aedfee;
 }
 
 .table-hover .table-info:hover {
@@ -124,6 +152,13 @@
   background-color: #ffeeba;
 }
 
+.table-warning th,
+.table-warning td,
+.table-warning thead th,
+.table-warning tbody + tbody {
+  border-color: #ffdf7e;
+}
+
 .table-hover .table-warning:hover {
   background-color: #ffe8a1;
 }
@@ -137,6 +172,13 @@
 .table-danger > th,
 .table-danger > td {
   background-color: #fdd6d6;
+}
+
+.table-danger th,
+.table-danger td,
+.table-danger thead th,
+.table-danger tbody + tbody {
+  border-color: #fbb3b2;
 }
 
 .table-hover .table-danger:hover {
@@ -154,6 +196,13 @@
   background-color: #fbfcfc;
 }
 
+.table-light th,
+.table-light td,
+.table-light thead th,
+.table-light tbody + tbody {
+  border-color: #f7f9fa;
+}
+
 .table-hover .table-light:hover {
   background-color: #ecf1f1;
 }
@@ -167,6 +216,13 @@
 .table-dark > th,
 .table-dark > td {
   background-color: #c5c6c8;
+}
+
+.table-dark th,
+.table-dark td,
+.table-dark thead th,
+.table-dark tbody + tbody {
+  border-color: #939699;
 }
 
 .table-hover .table-dark:hover {
@@ -194,7 +250,7 @@
 }
 
 .table .thead-dark th {
-  color: #e4e5e6;
+  color: #fff;
   background-color: #23282c;
   border-color: #343b41;
 }
@@ -206,7 +262,7 @@
 }
 
 .table-dark {
-  color: #e4e5e6;
+  color: #fff;
   background-color: #23282c;
 }
 

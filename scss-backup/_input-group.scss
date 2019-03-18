@@ -1,0 +1,8 @@
+// Import Bootstrap styles
+@import "bootstrap/input-group";
+
+.input-group-prepend,
+.input-group-append {
+  white-space: nowrap;
+  vertical-align: middle; // Match the inputs
+}

@@ -64,7 +64,6 @@
 .col-xl-auto {
   position: relative;
   width: 100%;
-  min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -78,7 +77,7 @@
 .col-auto {
   flex: 0 0 auto;
   width: auto;
-  max-width: none;
+  max-width: 100%;
 }
 
 .col-1 {
@@ -254,7 +253,7 @@
   .col-sm-auto {
     flex: 0 0 auto;
     width: auto;
-    max-width: none;
+    max-width: 100%;
   }
   .col-sm-1 {
     flex: 0 0 8.333333%;
@@ -396,7 +395,7 @@
   .col-md-auto {
     flex: 0 0 auto;
     width: auto;
-    max-width: none;
+    max-width: 100%;
   }
   .col-md-1 {
     flex: 0 0 8.333333%;
@@ -538,7 +537,7 @@
   .col-lg-auto {
     flex: 0 0 auto;
     width: auto;
-    max-width: none;
+    max-width: 100%;
   }
   .col-lg-1 {
     flex: 0 0 8.333333%;
@@ -680,7 +679,7 @@
   .col-xl-auto {
     flex: 0 0 auto;
     width: auto;
-    max-width: none;
+    max-width: 100%;
   }
   .col-xl-1 {
     flex: 0 0 8.333333%;

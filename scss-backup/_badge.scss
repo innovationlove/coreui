@@ -1,0 +1,6 @@
+// Import Bootstrap styles
+@import "bootstrap/badge";
+
+.badge-pill {
+  border-radius: $badge-pill-border-radius;
+}

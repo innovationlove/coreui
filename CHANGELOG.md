@@ -2,6 +2,7 @@
 - chore: Move the browserslist config to a separate file.
 - chore add `bundlesize`
 - chore add `find-unused-sass-variables`
+- chore: update `bootstrap` to `4.2.1`
 - chore: update `@babel/cli` to `7.2.0`
 - chore: update `@babel/core` to `7.2.0`
 - chore: update `@babel/plugin-external-helpers` to `7.2.0`

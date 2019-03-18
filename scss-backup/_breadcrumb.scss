@@ -1,0 +1,19 @@
+// Import Bootstrap styles
+@import "bootstrap/breadcrumb";
+
+.breadcrumb {
+  position: relative;
+  @include border-radius($breadcrumb-border-radius);
+  @include borders($breadcrumb-borders);
+}
+
+*[dir="rtl"] {
+  .breadcrumb-item::before {
+    padding-right: 0;
+    padding-left: $breadcrumb-item-padding;
+  }
+  .breadcrumb-item {
+    padding-right: $breadcrumb-item-padding;
+    padding-left: 0;
+  }
+}
