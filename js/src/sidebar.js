@@ -5,7 +5,7 @@ import toggleClasses from './toggle-classes'
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v2.1.12): sidebar.js
+ * CoreUI (v2.1.16): sidebar.js
  * Licensed under MIT (https://coreui.io/license)
  * --------------------------------------------------------------------------
  */
@@ -18,7 +18,7 @@ const Sidebar = (($) => {
    */
 
   const NAME                = 'sidebar'
-  const VERSION             = '2.1.12'
+  const VERSION             = '2.1.16'
   const DATA_KEY            = 'coreui.sidebar'
   const EVENT_KEY           = `.${DATA_KEY}`
   const DATA_API_KEY        = '.data-api'
@@ -32,6 +32,7 @@ const Sidebar = (($) => {
     ACTIVE              : 'active',
     BRAND_MINIMIZED     : 'brand-minimized',
     NAV_DROPDOWN_TOGGLE : 'nav-dropdown-toggle',
+    NAV_LINK_QUERIED    : 'nav-link-queried',
     OPEN                : 'open',
     SIDEBAR_FIXED       : 'sidebar-fixed',
     SIDEBAR_MINIMIZED   : 'sidebar-minimized',
@@ -86,6 +87,7 @@ const Sidebar = (($) => {
       this.setActiveLink()
       this._breakpointTest = this._breakpointTest.bind(this)
       this._clickOutListener = this._clickOutListener.bind(this)
+      this._removeEventListeners()
       this._addEventListeners()
       this._addMediaQuery()
     }
@@ -159,7 +161,7 @@ const Sidebar = (($) => {
         let link = value
         let cUrl
 
-        if (link.classList.contains(Selector.NAV_LINK_QUERIED)) {
+        if (link.classList.contains(ClassName.NAV_LINK_QUERIED)) {
           cUrl = String(window.location)
         } else {
           cUrl = String(window.location).split('?')[0]
@@ -259,6 +261,14 @@ const Sidebar = (($) => {
       })
     }
 
+    _removeEventListeners() {
+      $(document).off(Event.CLICK, Selector.BRAND_MINIMIZER)
+      $(document).off(Event.CLICK, Selector.NAV_DROPDOWN_TOGGLE)
+      $(document).off(Event.CLICK, Selector.SIDEBAR_MINIMIZER)
+      $(document).off(Event.CLICK, Selector.SIDEBAR_TOGGLER)
+      $(`${Selector.NAVIGATION} > ${Selector.NAV_ITEM} ${Selector.NAV_LINK}:not(${Selector.NAV_DROPDOWN_TOGGLE})`).off(Event.CLICK)
+    }
+
     // Static
 
     static _jQueryInterface() {
@@ -280,7 +290,7 @@ const Sidebar = (($) => {
    * ------------------------------------------------------------------------
    */
 
-  $(window).on(Event.LOAD_DATA_API, () => {
+  $(window).one(Event.LOAD_DATA_API, () => {
     const sidebar = $(Selector.SIDEBAR)
     Sidebar._jQueryInterface.call(sidebar)
   })

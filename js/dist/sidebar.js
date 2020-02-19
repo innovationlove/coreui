@@ -8,7 +8,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v2.1.12): sidebar.js
+ * CoreUI (v2.1.16): sidebar.js
  * Licensed under MIT (https://coreui.io/license)
  * --------------------------------------------------------------------------
  */
@@ -19,7 +19,7 @@ var Sidebar = function ($) {
    * ------------------------------------------------------------------------
    */
   var NAME = 'sidebar';
-  var VERSION = '2.1.12';
+  var VERSION = '2.1.16';
   var DATA_KEY = 'coreui.sidebar';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
@@ -31,6 +31,7 @@ var Sidebar = function ($) {
     ACTIVE: 'active',
     BRAND_MINIMIZED: 'brand-minimized',
     NAV_DROPDOWN_TOGGLE: 'nav-dropdown-toggle',
+    NAV_LINK_QUERIED: 'nav-link-queried',
     OPEN: 'open',
     SIDEBAR_FIXED: 'sidebar-fixed',
     SIDEBAR_MINIMIZED: 'sidebar-minimized',
@@ -77,6 +78,8 @@ var Sidebar = function ($) {
       this.setActiveLink();
       this._breakpointTest = this._breakpointTest.bind(this);
       this._clickOutListener = this._clickOutListener.bind(this);
+
+      this._removeEventListeners();
 
       this._addEventListeners();
 
@@ -152,7 +155,7 @@ var Sidebar = function ($) {
         var link = value;
         var cUrl;
 
-        if (link.classList.contains(Selector.NAV_LINK_QUERIED)) {
+        if (link.classList.contains(ClassName.NAV_LINK_QUERIED)) {
           cUrl = String(window.location);
         } else {
           cUrl = String(window.location).split('?')[0];
@@ -259,6 +262,14 @@ var Sidebar = function ($) {
 
         document.body.classList.remove('sidebar-show');
       });
+    };
+
+    _proto._removeEventListeners = function _removeEventListeners() {
+      $(document).off(Event.CLICK, Selector.BRAND_MINIMIZER);
+      $(document).off(Event.CLICK, Selector.NAV_DROPDOWN_TOGGLE);
+      $(document).off(Event.CLICK, Selector.SIDEBAR_MINIMIZER);
+      $(document).off(Event.CLICK, Selector.SIDEBAR_TOGGLER);
+      $(Selector.NAVIGATION + " > " + Selector.NAV_ITEM + " " + Selector.NAV_LINK + ":not(" + Selector.NAV_DROPDOWN_TOGGLE + ")").off(Event.CLICK);
     } // Static
     ;
 
@@ -290,7 +301,7 @@ var Sidebar = function ($) {
    */
 
 
-  $(window).on(Event.LOAD_DATA_API, function () {
+  $(window).one(Event.LOAD_DATA_API, function () {
     var sidebar = $(Selector.SIDEBAR);
 
     Sidebar._jQueryInterface.call(sidebar);
