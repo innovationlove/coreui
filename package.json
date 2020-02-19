@@ -88,7 +88,6 @@
     "babel-eslint": "^10.0.3",
     "babel-plugin-istanbul": "^5.2.0",
     "babel-plugin-transform-es2015-modules-strip": "^0.1.1",
-    "bootstrap": "^4.3.1",
     "clean-css-cli": "^4.3.0",
     "copyfiles": "^2.1.1",
     "cross-env": "^5.2.1",
