@@ -73,7 +73,6 @@
   },
   "dependencies": {
     "@coreui/coreui-plugin-npm-postinstall": "^1.0.2",
-    "bootstrap": "^4.3.1",
     "core-js": "^3.3.4",
     "regenerator-runtime": "^0.13.3"
   },
@@ -89,12 +88,13 @@
     "babel-eslint": "^10.0.3",
     "babel-plugin-istanbul": "^5.2.0",
     "babel-plugin-transform-es2015-modules-strip": "^0.1.1",
+    "bootstrap": "^4.3.1",
     "clean-css-cli": "^4.3.0",
     "copyfiles": "^2.1.1",
     "cross-env": "^5.2.1",
     "eslint": "^6.5.1",
     "eslint-plugin-compat": "^3.3.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "nodemon": "^1.19.4",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^6.1.3",
